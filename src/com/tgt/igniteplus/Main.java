@@ -10,33 +10,33 @@ public class Main {
         Scanner in = new Scanner(System.in);
         int opt;
 
-        Set<String> gauthamSkillSet = new HashSet<>();
-        gauthamSkillSet.add("Java");
-        gauthamSkillSet.add("SQL");
-        gauthamSkillSet.add("DS");
+        Set<String> GauthamSkillSet = new HashSet<>();
+        GauthamSkillSet.add("Java");
+        GauthamSkillSet.add("SQL");
+        GauthamSkillSet.add("DS");
 
-        Set<String> divyaSkillSet = new HashSet<>();
-        divyaSkillSet.add("Java");
-        divyaSkillSet.add("NOSQL");
-        divyaSkillSet.add("ML");
+        Set<String> DivyaSkillSet = new HashSet<>();
+        DivyaSkillSet.add("Java");
+        DivyaSkillSet.add("NOSQL");
+        DivyaSkillSet.add("ML");
 
-        Set<String> amitSkillSet = new HashSet<>();
-        amitSkillSet.add("Linux");
-        amitSkillSet.add("PSQL");
-        amitSkillSet.add("Scripting");
+        Set<String> AmitSkillSet = new HashSet<>();
+        AmitSkillSet.add("Linux");
+        AmitSkillSet.add("PSQL");
+        AmitSkillSet.add("Scripting");
 
-        Set<String> naveenSkillSet = new HashSet<>();
-        naveenSkillSet.add("Chef");
-        naveenSkillSet.add("React");
-        naveenSkillSet.add("AI");
+        Set<String> NaveenSkillSet = new HashSet<>();
+        NaveenSkillSet.add("Chef");
+        NaveenSkillSet.add("React");
+        NaveenSkillSet.add("AI");
 
         Department.add("Data Science");
         Department.add("Infrastructure");
 
-        member.add(new IgniteMember("Gautham", "VTU", Department.get(0), gauthamSkillSet, 28));
-        member.add(new IgniteMember("Divya", "TGT", Department.get(0), divyaSkillSet, 26));
-        member.add(new IgniteMember("Amit", "TMT", Department.get(1), amitSkillSet, 25));
-        member.add(new IgniteMember("Naveen", "DOJO", Department.get(1), naveenSkillSet, 22));
+        member.add(new IgniteMember("Gautham", "VTU", Department.get(0), GauthamSkillSet, 28));
+        member.add(new IgniteMember("Divya", "TGT", Department.get(0), DivyaSkillSet, 26));
+        member.add(new IgniteMember("Amit", "TMT", Department.get(1), AmitSkillSet, 25));
+        member.add(new IgniteMember("Naveen", "DOJO", Department.get(1), NaveenSkillSet, 22));
 
         do {
             System.out.println(
@@ -100,7 +100,7 @@ public class Main {
         do {
             for (IgniteMember im : member) {
                 if (im.getName().contains(newName)) {
-                    System.out.print("\nName already exists!\n" + "Enter a UNIQUE name:\t");
+                    System.out.print("\nName already exists!\n");
                     newName = in.next();
                 }
             }
@@ -123,7 +123,7 @@ public class Main {
                 System.out.println(j + ". " + deptObj);
                 j++;
             }
-            System.out.print("Enter your option:\t");
+            System.out.print("Enter choice:\t");
             deptChoice = in.nextInt();
             int k = 1;
             for (String deptObj : Department) {
@@ -216,7 +216,7 @@ public class Main {
 
 
     private static void displayMemberDeptWise() {
-        System.out.println("\nDEPARTMENT\t\t\t|\t\tMEMBER NAME\n" + "-------------------------------------------------");
+        System.out.println("\nDEPARTMENT\t\t\t|\t\tMEMBER NAME\n" );
         for (IgniteMember mem : member) {
             System.out.println(mem.getDepartment() + "\t\t|\t\t" + mem.getName());
         }
